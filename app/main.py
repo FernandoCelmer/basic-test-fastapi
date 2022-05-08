@@ -1,15 +1,21 @@
 from typing import List
 
-from fastapi import Depends, FastAPI
+from fastapi import Depends, FastAPI, Request
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+
 from sqlalchemy.orm import Session
 
 from . import crud, models, schemas
-from .database import SessionLocal, engine
+from app.database import SessionLocal, engine
 
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
 
 # Dependency
 def get_db():
@@ -27,3 +33,16 @@ def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 @app.post("/items/", response_model=schemas.Item)
 def create_item(item: schemas.ItemCreate, db: Session = Depends(get_db)):
     return crud.create_item(db=db, item=item)
+
+@app.get("/item/{id}", response_class=HTMLResponse)
+async def read_item(request: Request, id: str, db: Session = Depends(get_db)):
+    teste = crud.get_item(db=db, id=id)
+    return templates.TemplateResponse(
+        "item.html",
+        {
+            "request": request,
+            "id": teste.id,
+            "title": teste.title,
+            "description": teste.description
+        }
+    )
