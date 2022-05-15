@@ -7,3 +7,4 @@
 
 - [Python](https://www.python.org/) 
 - [FastAPI](https://fastapi.tiangolo.com/)
+- [Docker](https://docs.docker.com/)
