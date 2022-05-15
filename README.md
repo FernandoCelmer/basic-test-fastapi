@@ -20,7 +20,7 @@ Crie sua imagem FastAPI:
 sudo docker build --tag fastapi/dev --file docker/Dockerfile .
 ```
 
-## Iniciando o contêiner do Docker
+## Iniciando o contêiner Docker
 
 ```bash
 sudo docker run -d -p 80:80 fastapi/dev
