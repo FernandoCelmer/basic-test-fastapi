@@ -25,6 +25,16 @@ def get_db():
     finally:
         db.close()
 
+@app.get("/", response_class=HTMLResponse)
+async def root(request: Request):
+    return templates.TemplateResponse(
+        "index.html",
+        {
+            "request": request,
+            "message": "project-basic-test-fastapi"
+        }
+    )
+
 @app.get("/items/", response_model=List[schemas.Item])
 def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     items = crud.get_items(db, skip=skip, limit=limit)
@@ -34,8 +44,13 @@ def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 def create_item(item: schemas.ItemCreate, db: Session = Depends(get_db)):
     return crud.create_item(db=db, item=item)
 
-@app.get("/item/{id}", response_class=HTMLResponse)
-async def read_item(request: Request, id: str, db: Session = Depends(get_db)):
+@app.get("/items/{id}", response_model=schemas.Item)
+def read_item(id: str, db: Session = Depends(get_db)):
+    item = crud.get_item(db=db, id=id)
+    return item
+
+@app.get("/view_item/{id}", response_class=HTMLResponse)
+async def view_item(request: Request, id: str, db: Session = Depends(get_db)):
     teste = crud.get_item(db=db, id=id)
     return templates.TemplateResponse(
         "item.html",
