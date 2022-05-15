@@ -9,6 +9,7 @@ from sqlalchemy.orm import Session
 
 from . import crud, models, schemas
 from app.database import SessionLocal, engine
+from mangum import Mangum
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -61,3 +62,5 @@ async def view_item(request: Request, id: str, db: Session = Depends(get_db)):
             "description": teste.description
         }
     )
+
+handler = Mangum(app)
