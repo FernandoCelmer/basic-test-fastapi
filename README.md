@@ -12,15 +12,35 @@ Este repositório contém um projeto Python básico de uma API desenvolvido com 
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Docker](https://docs.docker.com/)
 
-## Construindo a imagem Docker
-Vá para o diretório do projeto (onde Dockerfile está, contendo seu app diretório).
-Crie sua imagem FastAPI:
+# Instruções
+## Excutando o Projeto Local
+
+ - Crie um novo ambiente virtual Python
+```bash
+virtualenv -p python3.9 venv
+```
+ - Ative o ambiente virtual
+```bash
+source venv/bin/activate
+```
+ - Instale os requerimentos com o PIP
+```bash
+pip install -r requirements.txt
+```
+ - Execute a aplicação
+```
+uvicorn app.main:app --host 0.0.0.0 --reload
+```
+
+## Executando o projeto com Docker
+
+ - Construindo a imagem Docker
 
 ```bash
 sudo docker build --tag fastapi/dev --file docker/Dockerfile .
 ```
 
-## Iniciando o contêiner Docker
+ - Iniciando o contêiner Docker
 
 ```bash
 sudo docker run -d -p 80:80 fastapi/dev
