@@ -4,8 +4,10 @@ root_dir=$PWD
 venv_dir="$root_dir/venv/lib/python3.9/site-packages"
 
 # Zip Package
-cd $venv_dir && zip -r9 "$root_dir/lambda.zip" . \
-&& cd "$root_dir/api" && zip -g ../lambda.zip -r .
+mkdir zip && cp -r app/ zip/app/ \
+&& cd $venv_dir && zip -r9 "$root_dir/lambda.zip" . \
+&& cd "$root_dir/zip" && zip -g ../lambda.zip -r . \
+&& cd "$root_dir" && rm -r zip
 
 # Upload S3
 bucket_name="upy-fastapi-lambda-dev"
