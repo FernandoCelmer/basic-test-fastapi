@@ -43,5 +43,5 @@ sudo docker build --tag fastapi/dev --file docker/Dockerfile .
  - Iniciando o contêiner Docker
 
 ```bash
-sudo docker run -d -p 80:80 fastapi/dev
+sudo docker run --name my_fastapi -d -p 80:80 fastapi/dev
 ```
