@@ -3,17 +3,17 @@ from typing import Optional
 from pydantic import BaseModel
 
 
-class ItemBase(BaseModel):
+class SchemaItemBase(BaseModel):
     title: str
     description: Optional[str] = None
     created_date: datetime = None
 
 
-class ItemCreate(ItemBase):
+class SchemaItemCreate(SchemaItemBase):
     pass
 
 
-class Item(ItemBase):
+class SchemaItem(SchemaItemBase):
     id: int
 
     class Config:
