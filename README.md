@@ -13,7 +13,7 @@ Este repositório contém um projeto Python básico de uma API desenvolvido com 
 - [Docker](https://docs.docker.com/)
 
 # Instruções
-## Excutando o Projeto Local
+## Excutando o Projeto Local [PIP]
 
  - Crie um novo ambiente virtual Python
 ```bash
@@ -31,8 +31,22 @@ pip install -r requirements.txt
 ```
 uvicorn app.main:app --host 0.0.0.0 --reload
 ```
+## Excutando o Projeto Local [Poetry]
+ - Instalando Poetry
+ ```
+ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+ ```
 
-## Executando o projeto com Docker
+  - Ative o ambiente virtual
+```bash
+poetry shell
+```
+ - Instale os requerimentos
+```bash
+poetry install
+```
+
+## Executando o projeto com [Docker]
 
  - Construindo a imagem Docker
 
