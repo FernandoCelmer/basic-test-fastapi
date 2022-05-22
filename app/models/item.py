@@ -8,6 +8,6 @@ class Item(Base):
     __tablename__ = "items"
 
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String, index=True)
-    description = Column(String, index=True)
+    title = Column(String(45), index=True)
+    description = Column(String(245), index=True)
     created_date = Column(DateTime, default=datetime.datetime.utcnow)
