@@ -6,7 +6,7 @@
 ## Sobre
 Este repositório contém um projeto Python básico de uma API desenvolvido com o framework fastapi.
 
-## 🚀 Technologies
+## 🚀 Stack
 
 - [Python](https://www.python.org/) 
 - [FastAPI](https://fastapi.tiangolo.com/)
