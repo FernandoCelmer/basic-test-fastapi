@@ -4,7 +4,7 @@
 ![GitHub followers](https://img.shields.io/github/followers/FernandoCelmer?label=Fernando%20Celmer&style=social)
 
 ## Sobre
-Este repositório contém um projeto Python básico de uma API desenvolvido com o framework fastapi.
+This repository contains a basic Python project of an API developed with the fastapi framework.
 
 ## 🚀 Stack
 
@@ -12,49 +12,49 @@ Este repositório contém um projeto Python básico de uma API desenvolvido com 
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Docker](https://docs.docker.com/)
 
-# Instruções
-## Excutando o Projeto Local [PIP]
+# Instructions
+## Running the Local Project with [PIP]
 
- - Crie um novo ambiente virtual Python
+ - Create a new Python virtual environment
 ```bash
 virtualenv -p python3.9 venv
 ```
- - Ative o ambiente virtual
+ - Activate the virtual environment
 ```bash
 source venv/bin/activate
 ```
- - Instale os requerimentos com o PIP
+ - Install requirements with PIP
 ```bash
 pip install -r requirements.txt
 ```
- - Execute a aplicação
+ - Run the application
 ```
 uvicorn app.main:app --host 0.0.0.0 --reload
 ```
-## Excutando o Projeto Local [Poetry]
- - Instalando Poetry
+## Running the Local Project with [Poetry]
+ - Installing Poetry
  ```
  curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
  ```
 
-  - Ative o ambiente virtual
+  - Activate the virtual environment
 ```bash
 poetry shell
 ```
- - Instale os requerimentos
+ - install the requirements
 ```bash
 poetry install
 ```
 
-## Executando o projeto com [Docker]
+## Running the project with [Docker]
 
- - Construindo a imagem Docker
+ - Building the Docker image
 
 ```bash
 sudo docker build --tag fastapi/dev --file docker/Dockerfile .
 ```
 
- - Iniciando o contêiner Docker
+ - Starting the Docker container
 
 ```bash
 sudo docker run --name my_fastapi -d -p 80:80 fastapi/dev
