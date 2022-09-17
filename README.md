@@ -1,9 +1,9 @@
 # [project-basic-test-fastapi]
 
-![GitHub last commit](https://img.shields.io/github/last-commit/FernandoCelmer/project-basic-test-fastapi)
-![GitHub followers](https://img.shields.io/github/followers/FernandoCelmer?label=Fernando%20Celmer&style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/FernandoCelmer/project-basic-test-fastapi?style=for-the-badge)
+![GitHub followers](https://img.shields.io/github/followers/FernandoCelmer?label=FernandoCelmer&style=for-the-badge)
 
-## Sobre
+## About
 This repository contains a basic Python project of an API developed with the fastapi framework.
 
 ## 🚀 Stack
@@ -13,7 +13,12 @@ This repository contains a basic Python project of an API developed with the fas
 - [Docker](https://docs.docker.com/)
 
 # Instructions
-## Running the Local Project with [PIP]
+## Running the Local Project [PIP]
+
+<details>
+  <summary>List of required commands</summary>
+
+<br>
 
  - Create a new Python virtual environment
 ```bash
@@ -31,8 +36,16 @@ pip install -r requirements.txt
 ```
 uvicorn app.main:app --host 0.0.0.0 --reload
 ```
-## Running the Local Project with [Poetry]
- - Installing Poetry
+</details>
+
+## Running the Local Project [Poetry]
+
+<details>
+  <summary>List of required commands</summary>
+
+<br>
+
+ - Installing with Poetry
  ```
  curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
  ```
@@ -45,8 +58,14 @@ poetry shell
 ```bash
 poetry install
 ```
+</details>
 
 ## Running the project with [Docker]
+
+<details>
+  <summary>List of required commands</summary>
+ 
+ <br>
 
  - Building the Docker image
 
@@ -59,3 +78,4 @@ sudo docker build --tag fastapi/dev --file docker/Dockerfile .
 ```bash
 sudo docker run --name my_fastapi -d -p 80:80 fastapi/dev
 ```
+ </details>
