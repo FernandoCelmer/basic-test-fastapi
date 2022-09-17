@@ -18,6 +18,8 @@ Este repositório contém um projeto Python básico de uma API desenvolvido com 
 <details>
   <summary>List of required commands</summary>
 
+<br>
+
  - Crie um novo ambiente virtual Python
 ```bash
 virtualenv -p python3.9 venv
@@ -34,15 +36,15 @@ pip install -r requirements.txt
 ```
 uvicorn app.main:app --host 0.0.0.0 --reload
 ```
-
- </details>
-
+</details>
 
 ## Excutando o Projeto Local [Poetry]
 
-  <details>
+<details>
   <summary>List of required commands</summary>
- 
+
+<br>
+
  - Instalando Poetry
  ```
  curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
@@ -56,14 +58,15 @@ poetry shell
 ```bash
 poetry install
 ```
+</details>
 
- </details>
-   
 ## Executando o projeto com [Docker]
 
 <details>
   <summary>List of required commands</summary>
  
+ <br>
+
  - Construindo a imagem Docker
 
 ```bash
@@ -75,5 +78,4 @@ sudo docker build --tag fastapi/dev --file docker/Dockerfile .
 ```bash
 sudo docker run --name my_fastapi -d -p 80:80 fastapi/dev
 ```
-
  </details>
