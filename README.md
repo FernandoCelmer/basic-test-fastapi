@@ -1,7 +1,7 @@
 # [project-basic-test-fastapi]
 
-![GitHub last commit](https://img.shields.io/github/last-commit/FernandoCelmer/project-basic-test-fastapi)
-![GitHub followers](https://img.shields.io/github/followers/FernandoCelmer?label=Fernando%20Celmer&style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/FernandoCelmer/project-basic-test-fastapi?style=for-the-badge)
+![GitHub followers](https://img.shields.io/github/followers/FernandoCelmer?label=FernandoCelmer&style=for-the-badge)
 
 ## About
 This repository contains a basic Python project of an API developed with the fastapi framework.
