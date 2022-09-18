@@ -6,7 +6,6 @@ function_name="upy-fastapi-lambda-dev"
 bucket_name="upy-fastapi-lambda-dev"
 file_name="upy-0.0.1.zip"
 
-
 # Zip Package
 mkdir zip && cp -r app/ zip/app/ && cp -r config.py zip/config.py && cp -r sql_app.db zip/sql_app.db \
 && cd $venv_dir && zip -r9 "$root_dir/$file_name" . \
