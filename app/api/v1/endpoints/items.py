@@ -9,9 +9,9 @@ from app.controllers.item import ControlerItem
 from app.schemas.item import SchemaItem
 from app.database import get_db
 
-templates = Jinja2Templates(directory="templates")
 
 router = APIRouter()
+templates = Jinja2Templates(directory="app/templates")
 
 
 @router.get("/items", response_model=List[SchemaItem])
