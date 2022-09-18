@@ -15,7 +15,8 @@ app = FastAPI(
         "name": "Fernando Celmer",
         "url": "wwww.fernandocelmer.com",
         "email": "email@fernandocelmer.com",
-    }
+    },
+    root_path="/dev/"
 )
 
 app.include_router(router, prefix="/v1")
@@ -24,7 +25,7 @@ app.mount("/app/static", StaticFiles(directory="app/static"), name="static")
 templates = Jinja2Templates(directory="app/templates")
 
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/index", response_class=HTMLResponse)
 async def root(request: Request):
     return templates.TemplateResponse(
         "index.html",
@@ -38,7 +39,7 @@ async def root(request: Request):
 @app.get("/status")
 def get_status():
     """Get status of messaging server."""
-    return ({"status":  "it's live"})
+    return ({"status":  "it's alive"})
 
 
 handler = Mangum(app)
