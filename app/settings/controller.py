@@ -1,7 +1,7 @@
 # coding=utf-8
 
-from app import database
-from app.database import engine
+from app.settings import database
+from app.settings.database import engine
 
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
@@ -13,8 +13,7 @@ class BaseController(object):
     """ Base View to create helpers common to all Webservices.
     """
     def __init__(self, db: Session, data: dict = {}):
-        """
-        Constructor
+        """Constructor
         """
 
         self.close_session = None
@@ -29,8 +28,7 @@ class BaseController(object):
     
 
     def get_all(self):
-        """
-        Method GET All
+        """Query GET All
         """
 
         try:
@@ -51,8 +49,7 @@ class BaseController(object):
 
 
     def get(self, model_id: int):
-        """
-        Method GET
+        """Query GET
         """
 
         try:

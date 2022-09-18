@@ -2,7 +2,7 @@ import datetime
 
 from sqlalchemy import Column, Integer, String, DateTime
 
-from app.database import Base
+from app.settings.database import Base
 
 class Item(Base):
     __tablename__ = "items"

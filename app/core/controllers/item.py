@@ -1,7 +1,7 @@
 # coding=utf-8
 
-from app.models.item import Item
-from app.controllers.base_controller import BaseController
+from app.core.models.item import Item
+from app.settings.controller import BaseController
 
 from sqlalchemy.orm import Session
 

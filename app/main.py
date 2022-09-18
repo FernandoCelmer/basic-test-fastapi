@@ -3,6 +3,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
+from app.settings.config import ROOT_PATH
 from app.api.v1.routers import router
 from mangum import Mangum
 
@@ -13,16 +14,15 @@ app = FastAPI(
     version="0.0.1",
     contact={
         "name": "Fernando Celmer",
-        "url": "wwww.fernandocelmer.com",
-        "email": "email@fernandocelmer.com",
+        "email": "email@fernandocelmer.com"
     },
-    root_path="/dev/"
+    root_path=ROOT_PATH
 )
 
 app.include_router(router, prefix="/v1")
 
 app.mount("/app/static", StaticFiles(directory="app/static"), name="static")
-templates = Jinja2Templates(directory="app/templates")
+templates = Jinja2Templates(directory="app/static/templates")
 
 
 @app.get("/index", response_class=HTMLResponse)
